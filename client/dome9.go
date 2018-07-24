@@ -26,7 +26,7 @@ func NewInfraClient(config Config) InfraClient {
 	return InfraClient{New(config)}
 }
 
-// ErrorResponse represents an error response from New Relic.
+// ErrorResponse represents an error response from Dome9.
 type ErrorResponse struct {
 	Detail *ErrorDetail `json:"error,omitempty"`
 }
@@ -38,7 +38,7 @@ func (e *ErrorResponse) Error() string {
 	return "Unknown error"
 }
 
-// ErrorDetail represents the details of an ErrorResponse from New Relic.
+// ErrorDetail represents the details of an ErrorResponse from Dome9.
 type ErrorDetail struct {
 	Title string `json:"title,omitempty"`
 }
