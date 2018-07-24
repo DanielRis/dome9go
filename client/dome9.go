@@ -23,7 +23,6 @@ func NewInfraClient(config Config) InfraClient {
 	if config.BaseURL == "" {
 		config.BaseURL = "https://api.dome9.com/v2"
 	}
-
 	return InfraClient{New(config)}
 }
 
