@@ -1,4 +1,4 @@
-package client
+package api
 
 import (
 	"crypto/tls"
@@ -20,6 +20,7 @@ type InfraClient struct {
 
 // NewInfraClient returns a new InfraClient for the specified apiKey.
 func NewInfraClient(config Config) InfraClient {
+
 	if config.BaseURL == "" {
 		config.BaseURL = "https://api.dome9.com/v2"
 	}
@@ -126,5 +127,5 @@ func (c *Client) Do(method string, path string, body interface{}, response inter
 		}
 	}
 
-	return "", fmt.Errorf("Unexpected status %v returned from API", apiResponse.StatusCode())
+	return "", fmt.Errorf("---Unexpected status %v returned from API", apiResponse.Request)
 }
